@@ -11,30 +11,49 @@
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/assets/styles/modal-video.min.css"
+    />
     <link rel="stylesheet" href="assets/styles/main.css" />
   </head>
   <body>
     <!-- Modal -->
     <div
       class="modal fade"
-      id="staticBackdrop"
+      id="myModal"
       tabindex="-1"
       role="dialog"
-      aria-labelledby="staticBackdropLabel"
+      aria-labelledby="exampleModalLabel"
       aria-hidden="true"
     >
-      <div class="modal-dialog modal-lg modal-dialog-centered">
+      <button
+        type="button"
+        class="close modal-close"
+        data-dismiss="modal"
+        aria-label="Close"
+      >
+       <img src="/assets/images/close-icon.svg" class="close-icon" alt="">
+      </button>
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <div class="modal-content">
-          <iframe
-            class="responsive-iframe"
-            src="https://www.youtube.com/embed/kyE--XLP1xA"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+          <div class="modal-body p-0">
+            <!-- 16:9 aspect ratio -->
+            <div class="embed-responsive embed-responsive-16by9">
+              <iframe
+                class="embed-responsive-item"
+                src=""
+                id="video"
+                allowscriptaccess="always"
+                allow="autoplay"
+              ></iframe>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
     <!-- Modal -->
     <nav
       class="nav-header navbar navbar-expand-lg navbar-dark navbar-light shadow fixed-top py-4"
@@ -89,7 +108,12 @@
           Create an account to start enjoying cashless transactions with the
           Philippines’ leading e-wallet! Now available for all networks.
         </div>
-        <button href="#" class="hero-section-button">Get Started</button>
+        <a
+          class="hero-section-button"
+          href="https://gcsh.app/r/hWlkIm1"
+          target="_blank"
+          >Get Started</a
+        >
       </div>
     </div>
     <!-- Hero Section End -->
@@ -105,7 +129,12 @@
               Introducing a modern style of transaction with GCash you can now
               pay easily with your mobile device.
             </p>
-            <button class="about-section-button">Learn More</button>
+            <a
+              class="about-section-button"
+              href="https://www.gcash.com/get-started"
+              target="_blank"
+              >Learn More</a
+            >
           </div>
         </div>
         <div class="col-12 col-md-6">
@@ -113,9 +142,10 @@
             <div class="video-btn">
               <button
                 type="button"
-                class="mx-auto shadow"
+                class="btn btn-primary btn-video"
                 data-toggle="modal"
-                data-target="#staticBackdrop"
+                data-src="https://www.youtube.com/embed/q5e02IUbYw8"
+                data-target="#myModal"
               ></button>
             </div>
           </div>
@@ -435,10 +465,7 @@
               <img src="assets/images/facebook-icon.svg" alt="facebook icon" />
             </a>
             <a href="#">
-              <img
-                src="assets/images/instagram-icon.svg"
-                alt="facebook icon"
-              />
+              <img src="assets/images/instagram-icon.svg" alt="facebook icon" />
             </a>
             <a href="#">
               <img src="assets/images/twitter-icon.svg" alt="facebook icon" />
@@ -479,5 +506,33 @@
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
       crossorigin="anonymous"
     ></script>
+    <script>
+      $(document).ready(function () {
+        // Gets the video src from the data-src on each button
+
+        var $videoSrc;
+        $(".btn-video").click(function () {
+          $videoSrc = $(this).data("src");
+        });
+        console.log($videoSrc);
+
+        // when the modal is opened autoplay it
+        $("#myModal").on("shown.bs.modal", function (e) {
+          // set the video src to autoplay and not to show related video. Youtube related video is like a box of chocolates... you never know what you're gonna get
+          $("#video").attr(
+            "src",
+            $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0"
+          );
+        });
+
+        // stop playing the youtube video when I close the modal
+        $("#myModal").on("hide.bs.modal", function (e) {
+          // a poor man's stop video
+          $("#video").attr("src", $videoSrc);
+        });
+
+        // document ready
+      });
+    </script>
   </body>
 </html>

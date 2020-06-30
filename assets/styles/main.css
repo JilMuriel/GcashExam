@@ -56,6 +56,10 @@ body {
   background: white;
 }
 
+.hero-section-button:hover {
+  text-decoration: none;
+}
+
 .about-section {
   height: auto;
   width: 100%;
@@ -109,6 +113,11 @@ body {
   color: #fff;
   text-decoration: none;
   background: #297bfa;
+}
+
+.about-section-button:hover {
+  text-decoration: none;
+  color: #fff;
 }
 
 .video-container {
@@ -594,6 +603,9 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
+  .more-infor-text__wrapper {
+    max-width: 417px;
+  }
   .hero-section {
     height: 100vh;
   }
@@ -635,24 +647,28 @@ body {
 }
 
 .modal {
-  background-color: #6EA6FE;
+  background-color: #0234b9;
 }
 
-.modal-content {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  padding-top: 56.25%;
-  /* 16:9 Aspect Ratio */
+iframe {
+  border: 0px;
 }
 
-.responsive-iframe {
+.modal-close {
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
+  top: 5px;
+  right: 15px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 40px;
+}
+
+.modal-close:hover {
+  color: #fff;
+}
+
+.close-icon {
+  height: 30px;
+  width: 30px;
 }
 /*# sourceMappingURL=main.css.map */
