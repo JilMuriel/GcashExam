@@ -11,7 +11,7 @@ body {
 }
 
 .nav-btn {
-  padding: 9px 30px;
+  padding: 9px 30px !important;
   max-width: 149px;
   max-height: 43px;
   font-weight: 600;
@@ -643,6 +643,10 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   .dropdown-menu {
     min-width: 14rem;
   }
