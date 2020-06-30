@@ -22,7 +22,7 @@ body {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  background: url("/assets/images/hero-bg.svg");
+  background: url("../../assets/images/hero-bg.svg");
   background-color: #297bfa;
   background-size: cover;
   background-position: center bottom;
@@ -367,25 +367,16 @@ body {
   padding: 28px 0px;
   border-top: 0.5px solid #d6d6d6;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 .copy-right-text {
   font-size: 11px;
   color: #7e7e7e;
   margin-bottom: 4vh;
+  text-align: center;
 }
 
 .footer-nav__links {
@@ -625,6 +616,21 @@ body {
     width: 230px;
     top: 190px;
     left: -120px;
+  }
+  .footer-nav {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .copy-right-text {
+    margin-bottom: 0px;
+    text-align: left;
+  }
+  .footer-nav__links {
+    min-width: auto;
+    max-width: 100%;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
 }
 
