@@ -7,7 +7,21 @@ body {
   background: #297bfa;
   z-index: 10010;
 }
-
+.nav-btn {
+  padding: 9px 30px;
+  max-width: 149px;
+  max-height: 43px;
+  font-weight: 600;
+  border: 0;
+  font-size: 15px;
+  border-radius: 25px;
+  color: #297bfa;
+  text-decoration: none;
+  background: white;
+  &:hover {
+    text-decoration: none;
+  }
+}
 .hero-section {
   height: 80vh;
   display: flex;
@@ -34,7 +48,7 @@ body {
   margin-bottom: 25px;
 }
 .hero-section-button {
-  padding: 9px 22px;
+  padding: 13px 22px;
   max-width: 149px;
   max-height: 43px;
   font-weight: 600;
