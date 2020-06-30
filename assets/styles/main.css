@@ -406,6 +406,7 @@ body {
       flex-wrap: wrap;
   padding: 0;
   color: #7e7e7e;
+  margin: auto;
 }
 
 .footer-nav__links a {
@@ -545,7 +546,29 @@ body {
     margin-bottom: 63px;
   }
   .cash-in-section {
+    position: relative;
     padding: 50px 0px 25px 0px;
+  }
+  .cash-in-section::before {
+    content: "";
+    position: absolute;
+    background: url("../../assets/images/finger-print.svg");
+    background-repeat: no-repeat;
+    left: -60px;
+    bottom: -201px;
+    height: 356px;
+    width: 174px;
+  }
+  .cash-in-section::after {
+    content: "";
+    position: absolute;
+    background: url("../../assets/images/video-before-img.svg");
+    background-repeat: no-repeat;
+    background-position: right;
+    right: 0px;
+    bottom: -201px;
+    height: 356px;
+    width: 174px;
   }
   .cash-in-section__content {
     -webkit-box-align: center;
@@ -603,6 +626,9 @@ body {
 }
 
 @media screen and (min-width: 1024px) {
+  .dropdown-menu {
+    min-width: 14rem;
+  }
   .more-infor-text__wrapper {
     max-width: 417px;
   }
@@ -665,6 +691,11 @@ iframe {
 
 .modal-close:hover {
   color: #fff;
+}
+
+.dropdown-menu {
+  border-radius: 0;
+  border: 0px;
 }
 
 .close-icon {

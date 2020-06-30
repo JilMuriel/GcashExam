@@ -324,6 +324,7 @@ footer {
   flex-wrap: wrap;
   padding: 0;
   color: #7e7e7e;
+  margin: auto;
   a {
     padding: 0 2vh;
     color: #7e7e7e;
@@ -464,7 +465,29 @@ footer {
   }
   //Cash in
   .cash-in-section {
+    position: relative;
     padding: 50px 0px 25px 0px;
+    &::before {
+      content: "";
+      position: absolute;
+      background: url("../../assets/images/finger-print.svg");
+      background-repeat: no-repeat;
+      left: -60px;
+      bottom: -201px;
+      height: 356px;
+      width: 174px;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      background: url("../../assets/images/video-before-img.svg");
+      background-repeat: no-repeat;
+      background-position: right;
+      right: 0px;
+      bottom: -201px;
+      height: 356px;
+      width: 174px;
+    }
   }
   .cash-in-section__content {
     align-items: center;
@@ -524,6 +547,9 @@ footer {
 }
 
 @media screen and (min-width: 1024px) {
+  .dropdown-menu {
+    min-width: 14rem;
+  }
   .more-infor-text__wrapper {
     max-width: 417px;
   }
@@ -569,22 +595,26 @@ footer {
   background-color: #0234b9;
 }
 iframe {
-    border: 0px;
+  border: 0px;
 }
 .modal-close {
-    position: absolute;
-    top: 5px;
-    right: 15px;
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 40px;
+  &:hover {
     color: #fff;
-    cursor: pointer;
-    font-size: 40px;
-    &:hover {
-        color: #fff;
-    }
+  }
+}
+.dropdown-menu {
+  border-radius: 0;
+  border: 0px;
 }
 .close-icon {
-    height: 30px;
-    width: 30px;
+  height: 30px;
+  width: 30px;
 }
 // .modal-content {
 //   position: relative;
